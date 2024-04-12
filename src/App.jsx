@@ -1,13 +1,13 @@
-import "./App.css";
-import EnhancedTable from "./components/tabla-asientos/TablaAsientos";
+import './App.css';
+import Contenedor from './pages/Contenedor';
+
 
 function App() {
 
 
     return (
         <>
-            <EnhancedTable />
-
+            <Contenedor />
         </>
     );
 }

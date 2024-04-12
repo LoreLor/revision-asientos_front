@@ -19,6 +19,6 @@ module.exports = {
     ],
     "indent" : ["error", 4],
     "semi" : ["error", "always"],
-    "quotes" : ["error", "double"]
+    "quotes" : ["error", "single"]
   },
 }
