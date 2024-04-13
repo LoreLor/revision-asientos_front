@@ -102,9 +102,19 @@ const useStyles = makeStyles((theme) => ({
         '&::-webkit-scrollbar-thumb:hover': {
             backgroundColor: '#007cc3',
             border: '4px solid #fff'
+        },  
+    },
+    tableRow: {
+        '&:hover': {
+            backgroundColor: 'lightgrey'
         }
-        
-    }
+    },
+    checkbox: {
+        '&$checked': {
+            color: 'blue',
+        },
+    },
+    checked: {},
 }));
 
 function createData(name, calories, fat, carbs, protein) {
@@ -125,6 +135,7 @@ const Tabla = props =>  {
     const classes = useStyles();
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowPerPage] = useState(5);
+    const [checked, setChecked] = useState(false);
 
     const handleChangePage = (newPage) => {
         setPage(newPage);
@@ -133,8 +144,13 @@ const Tabla = props =>  {
     const handleChangeRowsPerPage = (event) => {
         setRowPerPage(parseInt(event.target.value, 10));
         setPage(0);
-    }
+    };
 
+    // manejo de checkbox
+    const handleChecked = (event) => {
+        setChecked(event.target.value);
+    };
+    
 
 
     return (
@@ -160,9 +176,13 @@ const Tabla = props =>  {
                     </TableHead>
                     <TableBody>
                         {rows.map((row) => (
-                            <TableRow key={row.name}>
+                            <TableRow key={row.name} className={classes.tableRow}>
                                 <TableCell align='center'>
-                                    <CheckBox />
+                                    <CheckBox 
+                                        checked={checked}
+                                        onChange={handleChecked}
+                                        className={classes.tableRow}
+                                    />
                                 </TableCell>
                                 <TableCell align='center' >
                                     <VisibilityIcon fontSize='small' color='action'/>
