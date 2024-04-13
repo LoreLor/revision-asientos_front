@@ -2,7 +2,7 @@
 
 Este es un proyecto de ejemplo que utiliza React con Vite como herramienta de construcción.
 El proyecto fue maquetado aplicando Material UI.
-Objetivo: 
+### Objetivo: 
 - Renderizado de datos en tabla según filtros aplicados.
 
 ## Requisitos previos
