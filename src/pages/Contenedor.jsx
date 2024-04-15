@@ -7,7 +7,7 @@ export default function Contenedor() {
     return (
         <>
             <Filtros />
-            {/* <Tabla /> */}
+            <Tabla /> 
         </>
     );
 }

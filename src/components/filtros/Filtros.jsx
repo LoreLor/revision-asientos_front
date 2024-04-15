@@ -5,12 +5,13 @@ import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import Slider from '@material-ui/core/Slider';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
 import CalendarTodayIcon from '@material-ui/icons/CalendarToday';
 import Switch from '@material-ui/core/Switch';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
-
+import { makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
 
 
 
@@ -83,7 +84,6 @@ const useStyles = makeStyles((theme) => ({
         marginLeft:'-20px',
         color: '#3b86ff',
     },
-    
     valueLabel: {
         left: 'calc(-50% + 12px)',
         top: -22,
@@ -91,10 +91,6 @@ const useStyles = makeStyles((theme) => ({
             background: 'transparent',
             color: '#000',
         },
-    },
-    mark: {
-        marginTop:'-26px',
-        
     },
     switch: {
         marginTop: '-90px',
@@ -105,8 +101,9 @@ const useStyles = makeStyles((theme) => ({
     },
     select: {
         width: '253px',
+        height: '52px',
         background: '#f7f7f7',
-        marginTop:'25px'
+        marginTop:'30px'
     },
     labelSelect: {
         marginLeft: '-10px',
@@ -114,6 +111,15 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '14px',
         color: '#707070',
         shrink: 'none'
+    },
+    button: {
+        width: '68px',
+        height: '39px',
+        backgroundColor: '#007cc3',
+        padding: '10px 16px',
+        borderRadius: '2px',
+        color: '#fff',
+        fontSize:'12px',
     }
 
 }));
@@ -134,9 +140,11 @@ export const Filtros = () => {
 
 
     return (
-        <div className={classes.root}>
+
+        <Grid className={classes.root}>
+
             {/* Número de Documento */}
-            <FormControl className={classes.formControl}>
+            <FormControl className={classes.formControl} xs={3}>
                 <InputLabel htmlFor='numDocumento' className={classes.label}>N°Documento</InputLabel>
                 <TextField
                     id="numDocumento"
@@ -149,12 +157,12 @@ export const Filtros = () => {
                         className: classes.helperText,
                     }} 
                     inputProps={{className:classes.input}}
-                />  
+                    />  
             </FormControl>
 
             {/* Tipo de Documento */}
-            <FormControl className={classes.formControl}>
-                <InputLabel htmlFor='numDocumento' className={classes.label}>N°Documento</InputLabel>
+            <FormControl className={classes.formControl} xs={3}>
+                <InputLabel htmlFor='tipoDocumento' className={classes.label}>N°Documento</InputLabel>
                 <TextField                        
                     id="filled-margin-dense"
                     defaultValue="Default Value"
@@ -166,12 +174,11 @@ export const Filtros = () => {
                         className: classes.helperText,
                     }}
                     inputProps={{className:classes.input}}
-                />
-                                      
+                    />                 
             </FormControl>
 
             {/* N° Orden de Compra */}
-            <FormControl className={classes.formControl}>
+            <FormControl className={classes.formControl} xs={3}>
                 <InputLabel htmlFor='numDocumento' className={classes.label}>N°Documento</InputLabel>
                 <TextField
                     id="filled-margin-dense"
@@ -184,12 +191,12 @@ export const Filtros = () => {
                         className: classes.helperText,
                     }}
                     inputProps={{className:classes.input}}
-                />
+                    />
                 {/* <FormHelperText style={{paddingLeft:0}}>Algo</FormHelperText>                       */}
             </FormControl>
 
             {/* N° Subledger*/}
-            <FormControl className={classes.formControl}>
+            <FormControl className={classes.formControl} xs={3}>
                 <InputLabel htmlFor='numDocumento' className={classes.label}>N°Documento</InputLabel>
                 <TextField
                     id="filled-margin-dense"
@@ -202,11 +209,11 @@ export const Filtros = () => {
                         className: classes.helperText,
                     }}
                     inputProps={{className:classes.input}}
-                />
+                    />
             </FormControl>
 
             {/* Centro de Costos */}
-            <FormControl className={classes.formControlSmall}>
+            <FormControl className={classes.formControlSmall} xs={3}>
                 <InputLabel htmlFor='numDocumento' className={classes.label}>C. de Costos</InputLabel>
                 <TextField
                     id="filled-margin-dense"
@@ -264,7 +271,7 @@ export const Filtros = () => {
             </FormControl>
 
             {/* Cuenta y Sub Cuenta*/}
-            <FormControl className={classes.formControlSmall} style={{marginLeft:'-20px'}}>
+            <FormControl className={classes.formControlSmall}  xs={3}>
                 <InputLabel htmlFor='numDocumento' className={classes.label}>Cuenta</InputLabel>
                 <TextField
                     id="filled-margin-dense"
@@ -298,7 +305,7 @@ export const Filtros = () => {
             </FormControl>
 
             {/* Fecha LM */}
-            <FormControl className={classes.formControlSmall} style={{marginLeft:'-20px'}}>
+            <FormControl className={classes.formControlSmall} xs={3}>
                 <InputLabel htmlFor='numDocumento' className={classes.label}>Fecha LM</InputLabel>
                 <TextField
                     id="filled-margin-dense"
@@ -331,7 +338,7 @@ export const Filtros = () => {
             </FormControl>
 
             {/* Slider */}
-            <FormControl className={classes.formControl}>
+            <FormControl className={classes.formControl} style={{marginLeft:'14px', marginTop:'10px'}} xs={3}>
                 <Typography id="non-linear-slider" className={classes.label} style={{paddingTop:'20px', marginLeft:'-20px'}}>
                     Importe $Arg
                 </Typography>
@@ -351,7 +358,7 @@ export const Filtros = () => {
             </FormControl>
 
             {/* Estado Proceso */}
-            <FormControl variant="filled" className={classes.formControl} style={{marginLeft:'14px', marginTop:'10px'}}>
+            <FormControl variant="filled" className={classes.formControl} style={{marginLeft:'14px', marginTop:'20px'}}>
                 <InputLabel id="demo-simple-select-filled-label" className={classes.labelSelect}>Estado Proceso</InputLabel>
                 <Select
                     labelId="demo-simple-select-filled-label"
@@ -369,7 +376,7 @@ export const Filtros = () => {
             </FormControl>
 
             {/* Compañia */}
-            <FormControl variant="filled" className={classes.formControl} style={{marginLeft:'14px', marginTop:'10px'}}>
+            <FormControl variant="filled" className={classes.formControl} style={{marginLeft:'14px', marginTop:'20px'}}xs={3}>
                 <InputLabel id="demo-simple-select-filled-label" className={classes.labelSelect}>Estado Proceso</InputLabel>
                 <Select
                     labelId="demo-simple-select-filled-label"
@@ -386,7 +393,7 @@ export const Filtros = () => {
                 </Select>
             </FormControl>
 
-            <FormControl className={classes.formControl}>
+            <FormControl className={classes.formControl} style={{marginLeft:'14px', marginTop:'10px', height:''}}xs={3}>
                 <InputLabel htmlFor='numDocumento' className={classes.label}>N°Documento</InputLabel>
                 <TextField
                     id="numDocumento"
@@ -401,7 +408,13 @@ export const Filtros = () => {
                     inputProps={{className:classes.input}}
                 />  
             </FormControl>
-        </div>
+
+            <FormControl className={classes.formControl} style={{marginLeft:'175px', marginTop:'60px', marginRight:'20px'}}xs={3}>
+                <Button variant="contained" className={classes.button}>
+                    Filtrar
+                </Button>
+            </FormControl>
+        </Grid>
     );
 };
 
