@@ -72,7 +72,7 @@ const style = {
 const useStyles = makeStyles((theme) => ({
     root: {
         fontFamily: 'Roboto, sans-serif',
-        margin: '9px 24px 24px',
+        marginTop: '9px',
         padding: '25px 31px 36px 27px',
         backgroundColor: '#fff',
         display: 'flex',

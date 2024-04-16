@@ -18,7 +18,6 @@ import Button from '@material-ui/core/Button';
 const useStyles = makeStyles((theme) => ({
     root: {
         fontFamily: 'Roboto, sans-serif',
-        margin: '9px 24px 24px',
         padding: '25px 31px 36px 27px',
         backgroundColor: '#fff',
         display: 'flex',
