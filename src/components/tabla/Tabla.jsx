@@ -70,6 +70,15 @@ const style = {
 };
 
 const useStyles = makeStyles((theme) => ({
+    root: {
+        fontFamily: 'Roboto, sans-serif',
+        margin: '9px 24px 24px',
+        padding: '25px 31px 36px 27px',
+        backgroundColor: '#fff',
+        display: 'flex',
+        flexWrap: 'wrap',
+       
+    },
     backdrop: {
         zIndex: theme.zIndex.drawer + 1,
         color: 'fff'
@@ -106,15 +115,9 @@ const useStyles = makeStyles((theme) => ({
     },
     tableRow: {
         '&:hover': {
-            backgroundColor: 'lightgrey'
+            backgroundColor: '#f7f7f7'
         }
-    },
-    checkbox: {
-        '&$checked': {
-            color: 'blue',
-        },
-    },
-    checked: {},
+    }
 }));
 
 function createData(name, calories, fat, carbs, protein) {
@@ -135,7 +138,6 @@ const Tabla = props =>  {
     const classes = useStyles();
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowPerPage] = useState(5);
-    const [checked, setChecked] = useState(false);
 
     const handleChangePage = (newPage) => {
         setPage(newPage);
@@ -146,15 +148,10 @@ const Tabla = props =>  {
         setPage(0);
     };
 
-    // manejo de checkbox
-    const handleChecked = (event) => {
-        setChecked(event.target.value);
-    };
-    
 
 
     return (
-        <Grid container style={{ width: '100%'}}>
+        <Grid container className={classes.root}>
             <TableContainer component={Paper} style={style.table} className={classes.table}>
                 <Table size="small">
                     <TableHead>
@@ -178,11 +175,7 @@ const Tabla = props =>  {
                         {rows.map((row) => (
                             <TableRow key={row.name} className={classes.tableRow}>
                                 <TableCell align='center'>
-                                    <CheckBox 
-                                        checked={checked}
-                                        onChange={handleChecked}
-                                        className={classes.tableRow}
-                                    />
+                                    <CheckBox />
                                 </TableCell>
                                 <TableCell align='center' >
                                     <VisibilityIcon fontSize='small' color='action'/>
