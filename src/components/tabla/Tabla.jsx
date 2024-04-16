@@ -70,6 +70,15 @@ const style = {
 };
 
 const useStyles = makeStyles((theme) => ({
+    root: {
+        fontFamily: 'Roboto, sans-serif',
+        margin: '9px 24px 24px',
+        padding: '25px 31px 36px 27px',
+        backgroundColor: '#fff',
+        display: 'flex',
+        flexWrap: 'wrap',
+       
+    },
     backdrop: {
         zIndex: theme.zIndex.drawer + 1,
         color: 'fff'
@@ -106,7 +115,7 @@ const useStyles = makeStyles((theme) => ({
     },
     tableRow: {
         '&:hover': {
-            backgroundColor: 'lightgrey'
+            backgroundColor: '#f7f7f7'
         }
     }
 }));
@@ -142,7 +151,7 @@ const Tabla = props =>  {
 
 
     return (
-        <Grid container style={{ width: '100%'}}>
+        <Grid container className={classes.root}>
             <TableContainer component={Paper} style={style.table} className={classes.table}>
                 <Table size="small">
                     <TableHead>

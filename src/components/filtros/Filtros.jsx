@@ -24,10 +24,11 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         flexWrap: 'wrap',
         justifyContent: 'space-between',
+        width:'100%'
     },
     textField: {
-        width: '253px',
-        height: '52px',
+        width: '100%',
+        height: '53px',
         margin: '24px 0 0.5px',
         padding: '16px 17px 15px 15px',
         bordeRadius: '6px',
@@ -43,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: theme.spacing(2),
     },
     label: {
-        width: '253px',
+        width: '16rem',
         height: '24px',
         margin: '0 0 0 15px',
         fontFamily: 'Roboto',
@@ -52,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
         color: '#707070' 
     },
     formControlSmall:{
-        width: '253px',
+        width: '16rem',
         flexDirection:'row',
         marginBottom: theme.spacing(2),
     },
@@ -100,20 +101,19 @@ const useStyles = makeStyles((theme) => ({
         }, 
     },
     select: {
-        width: '253px',
+        width: '16rem',
         height: '52px',
         background: '#f7f7f7',
-        marginTop:'30px'
+        marginTop:'30px',
     },
     labelSelect: {
         marginLeft: '-10px',
         marginTop: '-10px',
         fontSize: '14px',
         color: '#707070',
-        shrink: 'none'
     },
     button: {
-        width: '68px',
+        width: '5rem',
         height: '39px',
         backgroundColor: '#007cc3',
         padding: '10px 16px',
@@ -141,7 +141,7 @@ export const Filtros = () => {
 
     return (
 
-        <Grid className={classes.root}>
+        <Grid container className={classes.root} >
 
             {/* Número de Documento */}
             <FormControl className={classes.formControl} xs={3}>
@@ -157,7 +157,7 @@ export const Filtros = () => {
                         className: classes.helperText,
                     }} 
                     inputProps={{className:classes.input}}
-                    />  
+                />  
             </FormControl>
 
             {/* Tipo de Documento */}
@@ -174,7 +174,7 @@ export const Filtros = () => {
                         className: classes.helperText,
                     }}
                     inputProps={{className:classes.input}}
-                    />                 
+                />                 
             </FormControl>
 
             {/* N° Orden de Compra */}
@@ -191,7 +191,7 @@ export const Filtros = () => {
                         className: classes.helperText,
                     }}
                     inputProps={{className:classes.input}}
-                    />
+                />
                 {/* <FormHelperText style={{paddingLeft:0}}>Algo</FormHelperText>                       */}
             </FormControl>
 
@@ -209,7 +209,7 @@ export const Filtros = () => {
                         className: classes.helperText,
                     }}
                     inputProps={{className:classes.input}}
-                    />
+                />
             </FormControl>
 
             {/* Centro de Costos */}
@@ -222,7 +222,7 @@ export const Filtros = () => {
                     helperText="Negocio"
                     margin="dense"
                     variant="filled"
-                    style={{width: '53px', height: '52px', paddingRight: '0'}}
+                    style={{width: '3.5rem', height: '52px', paddingRight: '0'}}
                     inputProps={{maxLength:2, className:classes.inputSmall}}
                     FormHelperTextProps={{
                         className: classes.helperText,
@@ -236,7 +236,7 @@ export const Filtros = () => {
                     helperText="Planta"
                     margin="dense"
                     variant="filled"
-                    style={{width: '53px', height: '52px', paddingLeft: '8px', paddingRight: 0}}
+                    style={{width: '3.5rem', height: '52px', paddingLeft: '8px', paddingRight: 0}}
                     inputProps={{maxLength:2, className:classes.inputSmall}}
                     FormHelperTextProps={{
                         className: classes.helperText,
@@ -249,7 +249,7 @@ export const Filtros = () => {
                     helperText="C.Costo"
                     margin="dense"
                     variant="filled"
-                    style={{width: '66px', height: '52px', paddingLeft: '8px', paddingRight: 0}}
+                    style={{width: '4rem', height: '52px', paddingLeft: '8px', paddingRight: 0}}
                     inputProps={{maxLength:4, className:classes.inputSmall}}
                     FormHelperTextProps={{
                         className: classes.helperText,
@@ -262,7 +262,7 @@ export const Filtros = () => {
                     helperText="Linea"
                     margin="dense"
                     variant="filled"
-                    style={{width: '66px', height: '52px', paddingLeft: '8px', paddingRight: 0}}
+                    style={{width: '4rem', height: '52px', paddingLeft: '8px', paddingRight: 0}}
                     inputProps={{maxLength:4, className:classes.inputSmall}}
                     FormHelperTextProps={{
                         className: classes.helperText,
@@ -280,7 +280,7 @@ export const Filtros = () => {
                     helperText="Cuenta objeto"
                     margin="dense"
                     variant="filled"
-                    style={{width: '97px', height: '52px', paddingRight:'8px'}}
+                    style={{width: '6rem', height: '52px', paddingRight:'8px'}}
                     inputProps={{maxLength:6, className:classes.inputSmall}}
                     FormHelperTextProps={{
                         className: classes.helperText,
@@ -296,7 +296,7 @@ export const Filtros = () => {
                     helperText="Auxiliar"
                     margin="dense"
                     variant="filled"
-                    style={{width: '97px', height: '52px', paddingLeft:0}}
+                    style={{width: '6rem', height: '52px', paddingLeft:0}}
                     inputProps={{maxLength:6, className:classes.inputSmall}}
                     FormHelperTextProps={{
                         className: classes.helperText,
@@ -314,7 +314,7 @@ export const Filtros = () => {
                     helperText="Desde"
                     margin="dense"
                     variant="filled"
-                    style={{width: '97px', height: '52px', paddingRight:0}}
+                    style={{width: '6rem', height: '52px', paddingRight:0}}
                     inputProps={{className:classes.inputSmall}}
                     FormHelperTextProps={{
                         className: classes.helperText,
@@ -328,7 +328,7 @@ export const Filtros = () => {
                     helperText="Hasta"
                     margin="dense"
                     variant="filled"
-                    style={{width: '97px', height: '52px', paddingRight:0}}
+                    style={{width: '6rem', height: '52px', paddingRight:0}}
                     inputProps={{className:classes.inputSmall}}
                     FormHelperTextProps={{
                         className: classes.helperText,
@@ -393,7 +393,7 @@ export const Filtros = () => {
                 </Select>
             </FormControl>
 
-            <FormControl className={classes.formControl} style={{marginLeft:'14px', marginTop:'10px', height:''}}xs={3}>
+            <FormControl className={classes.formControl} style={{marginLeft:'14px', marginTop:'13px', height:'53px'}}xs={3}>
                 <InputLabel htmlFor='numDocumento' className={classes.label}>N°Documento</InputLabel>
                 <TextField
                     id="numDocumento"
@@ -409,7 +409,7 @@ export const Filtros = () => {
                 />  
             </FormControl>
 
-            <FormControl className={classes.formControl} style={{marginLeft:'175px', marginTop:'60px', marginRight:'20px'}}xs={3}>
+            <FormControl className={classes.formControl} style={{marginLeft:'140px', marginTop:'60px', marginRight:'100px'}}xs={3}>
                 <Button variant="contained" className={classes.button}>
                     Filtrar
                 </Button>
