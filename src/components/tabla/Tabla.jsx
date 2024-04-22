@@ -1,62 +1,62 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
-import Grid  from '@material-ui/core/Grid';
-import CheckBox  from '@material-ui/core/Checkbox';
-import TablePagination  from '@material-ui/core/TablePagination';
-import VisibilityIcon from '@material-ui/icons/Visibility';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
+import React, { useState } from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Table from "@material-ui/core/Table";
+import TableBody from "@material-ui/core/TableBody";
+import TableCell from "@material-ui/core/TableCell";
+import TableContainer from "@material-ui/core/TableContainer";
+import TableHead from "@material-ui/core/TableHead";
+import TableRow from "@material-ui/core/TableRow";
+import Paper from "@material-ui/core/Paper";
+import Grid  from "@material-ui/core/Grid";
+import CheckBox  from "@material-ui/core/Checkbox";
+import TablePagination  from "@material-ui/core/TablePagination";
+import VisibilityIcon from "@material-ui/icons/Visibility";
+import MoreVertIcon from "@material-ui/icons/MoreVert";
 
 
 const style = {
     header: {
-        color: '#334054',
-        fontSize: '14px',
-        fontFamily: 'Roboto, sans-serif',
-        fontWeight: 'bold',
-        height: '62px',
+        color: "#334054",
+        fontSize: "14px",
+        fontFamily: "Roboto, sans-serif",
+        fontWeight: "bold",
+        height: "62px",
         minWidth: 200
     },
     row: {
-        color: '#334054',
-        fontSize: '14px',
-        fontFamily: 'Roboto, sans-serif',
-        height: '62px',
+        color: "#334054",
+        fontSize: "14px",
+        fontFamily: "Roboto, sans-serif",
+        height: "62px",
         minWidth: 200
     },
     nroDocumento: {
-        color: '#334054',
-        fontSize: '14px',
-        fontFamily: 'Roboto, sans-serif',
-        fontWeight: 'bold',
-        height: '62px',
+        color: "#334054",
+        fontSize: "14px",
+        fontFamily: "Roboto, sans-serif",
+        fontWeight: "bold",
+        height: "62px",
         minWidth: 200
     },
     buttonFooterLabel: {
-        fontSize: '14px',
-        fontWeight: 'bold',
-        color: '#334054',
-        backgroundColor: '#f7f7f7',
-        borderRadius: '4px',
-        marginRight: '10px',
-        height: '37px'
+        fontSize: "14px",
+        fontWeight: "bold",
+        color: "#334054",
+        backgroundColor: "#f7f7f7",
+        borderRadius: "4px",
+        marginRight: "10px",
+        height: "37px"
     },
     buttonFooterIcon: {
-        color: '#f7f7f7'
+        color: "#f7f7f7"
     },
     icons: {
-        fontSize: '24px'
+        fontSize: "24px"
     },
     table: {
-        boxShadow: 'none'
+        boxShadow: "none"
     },
     smallIcon: {
         width: 24,
@@ -71,51 +71,51 @@ const style = {
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        fontFamily: 'Roboto, sans-serif',
-        marginTop: '9px',
-        padding: '25px 31px 36px 27px',
-        backgroundColor: '#fff',
-        display: 'flex',
-        flexWrap: 'wrap',
+        fontFamily: "Roboto, sans-serif",
+        marginTop: "9px",
+        padding: "25px 31px 36px 27px",
+        backgroundColor: "#fff",
+        display: "flex",
+        flexWrap: "wrap",
        
     },
     backdrop: {
         zIndex: theme.zIndex.drawer + 1,
-        color: 'fff'
+        color: "fff"
     },
     clicked: {
-        color: '#007cc3'
+        color: "#007cc3"
     },
     notClicked: {
-        color: 'rgb(81, 107, 145)'
+        color: "rgb(81, 107, 145)"
     },
     container: {
         padding: theme.spacing(2)
     },
     grid: {
-        alignSelf: 'flex-end'
+        alignSelf: "flex-end"
     },
     table: {
-        '&::-webkit-scrollbar': {
-            backgroundColor: '#fff',
-            whidth: '16px'
+        "&::-webkit-scrollbar": {
+            backgroundColor: "#fff",
+            whidth: "16px"
         },
-        '&::-webkit-scrollbar-track': {
-            backgroundColor: '#fff'
+        "&::-webkit-scrollbar-track": {
+            backgroundColor: "#fff"
         },
-        '&::-webkit-scrollbar-thumb': {
-            backgroundColor: '#007cc3',
-            borderRadius: '16px',
-            border: '5px solid #fff'
+        "&::-webkit-scrollbar-thumb": {
+            backgroundColor: "#007cc3",
+            borderRadius: "16px",
+            border: "5px solid #fff"
         },
-        '&::-webkit-scrollbar-thumb:hover': {
-            backgroundColor: '#007cc3',
-            border: '4px solid #fff'
+        "&::-webkit-scrollbar-thumb:hover": {
+            backgroundColor: "#007cc3",
+            border: "4px solid #fff"
         },  
     },
     tableRow: {
-        '&:hover': {
-            backgroundColor: '#f7f7f7'
+        "&:hover": {
+            backgroundColor: "#f7f7f7"
         }
     }
 }));
@@ -125,16 +125,16 @@ function createData(name, calories, fat, carbs, protein) {
 }
 
 const rows = [
-    createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-    createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-    createData('Eclair', 262, 16.0, 24, 6.0),
-    createData('Cupcake', 305, 3.7, 67, 4.3),
-    createData('Gingerbread', 356, 16.0, 49, 3.9),
+    createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
+    createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
+    createData("Eclair", 262, 16.0, 24, 6.0),
+    createData("Cupcake", 305, 3.7, 67, 4.3),
+    createData("Gingerbread", 356, 16.0, 49, 3.9),
     
 ];
 
-const Tabla = props =>  {
-    const { onSelectAllClick, numSelected, rowCount } = props;
+const Tabla = (props) =>  {
+    const {onSelectAllClick, numSelected, rowCount, filtro} = props;
     const classes = useStyles();
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowPerPage] = useState(5);
@@ -156,11 +156,11 @@ const Tabla = props =>  {
                 <Table size="small">
                     <TableHead>
                         <TableRow>
-                            <TableCell style={{ minWidth: '24px' }} align="center">
+                            <TableCell style={{ minWidth: "24px" }} align="center">
                                 <CheckBox 
                                     checked={rowCount > 0 && numSelected === rowCount}
                                     onChange={onSelectAllClick}
-                                    inputprops={{ 'aria-label': 'primary checked' }}
+                                    inputprops={{ "aria-label": "primary checked" }}
                                 />
                             </TableCell>
                             
@@ -173,7 +173,7 @@ const Tabla = props =>  {
                     </TableHead>
                     <TableBody>
                         {rows.map((row) => (
-                            <TableRow key={row.name} className={classes.tableRow}>
+                            <TableRow key={row.nroDocumento} className={classes.tableRow}>
                                 <TableCell align='center'>
                                     <CheckBox />
                                 </TableCell>
